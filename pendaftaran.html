@@ -1,0 +1,1730 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✨ Sistem Penerimaan Murid Baru 2026 - SD Negeri 2 Negara Batin</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Fredoka:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .font-fredoka { font-family: 'Fredoka', sans-serif; }
+        
+        .gradient-bg {
+            background: linear-gradient(-45deg, #667eea, #764ba2, #f093fb, #4facfe, #43e97b);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+        .float { animation: float 6s ease-in-out infinite; }
+        .float-delay-1 { animation: float 7s ease-in-out infinite; animation-delay: 1s; }
+        .float-delay-2 { animation: float 8s ease-in-out infinite; animation-delay: 2s; }
+        
+        @keyframes bounce-slow {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .bounce-slow { animation: bounce-slow 3s ease-in-out infinite; }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeInUp { animation: fadeInUp 0.6s ease-out forwards; }
+        
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        .animate-slideInRight { animation: slideInRight 0.5s ease-out forwards; }
+        
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 20px rgba(99, 102, 241, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(99, 102, 241, 0.6); }
+        }
+        .pulse-glow { animation: pulseGlow 2s ease-in-out infinite; }
+        
+        .glass {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .card-hover:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        .wave-bg {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='0.1' d='M0,160L48,176C96,192,192,224,288,213.3C384,203,480,149,576,138.7C672,128,768,160,864,186.7C960,213,1056,235,1152,218.7C1248,203,1344,149,1392,122.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: bottom;
+            background-size: cover;
+        }
+        
+        .progress-step { transition: all 0.3s ease; }
+        .progress-step.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: scale(1.1);
+        }
+        .progress-step.completed {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+        }
+        
+        .toast {
+            animation: slideInRight 0.4s ease-out, fadeOut 0.4s ease-in 3.6s forwards;
+        }
+        @keyframes fadeOut {
+            to { opacity: 0; transform: translateX(100px); }
+        }
+        
+        .modal-overlay {
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
+        }
+        
+        ::-webkit-scrollbar { width: 10px; height: 10px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+        }
+        
+        .sticker {
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+            transition: transform 0.3s;
+        }
+        .sticker:hover { transform: rotate(-5deg) scale(1.1); }
+        
+        .rainbow-text {
+            background: linear-gradient(90deg, #f093fb 0%, #f5576c 25%, #4facfe 50%, #43e97b 75%, #667eea 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: rainbow 3s linear infinite;
+        }
+        @keyframes rainbow {
+            to { background-position: 200% center; }
+        }
+        
+        .blob {
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            animation: blob 8s ease-in-out infinite;
+        }
+        @keyframes blob {
+            0%, 100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+            50% { border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%; }
+        }
+        
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        .marquee { animation: marquee 20s linear infinite; }
+        
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+        .shake { animation: shake 0.5s; }
+        
+        .tahun-pelajaran-text {
+            background: linear-gradient(90deg, #fde047 0%, #facc15 20%, #fbbf24 40%, #f59e0b 60%, #fde047 80%, #fef08a 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shineGold 3s linear infinite;
+            text-shadow: 0 0 30px rgba(253, 224, 71, 0.5);
+            filter: drop-shadow(0 2px 8px rgba(251, 191, 36, 0.6));
+            font-weight: 900;
+            letter-spacing: 3px;
+        }
+        @keyframes shineGold {
+            to { background-position: 200% center; }
+        }
+        
+        .selamat-datang-text {
+            background: linear-gradient(90deg, #ffffff 0%, #fef3c7 25%, #fde68a 50%, #fef3c7 75%, #ffffff 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shineGold 4s linear infinite;
+            filter: drop-shadow(0 2px 10px rgba(255, 255, 255, 0.5));
+        }
+        
+        .generasi-emas-text {
+            background: linear-gradient(90deg, #fbbf24 0%, #f472b6 25%, #34d399 50%, #60a5fa 75%, #fbbf24 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shineGold 3s linear infinite;
+            filter: drop-shadow(0 2px 8px rgba(251, 191, 36, 0.4));
+        }
+        
+        .pelajari-btn {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            color: white;
+            box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.5);
+            transition: all 0.3s ease;
+        }
+        .pelajari-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 35px -5px rgba(59, 130, 246, 0.7);
+        }
+        
+        .floating-icon {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.92);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            z-index: 2;
+        }
+        .floating-icon-toga { top: 15%; left: 3%; width: 85px; height: 85px; }
+        .floating-icon-book { top: 15%; right: 3%; width: 80px; height: 80px; }
+        .floating-icon-pencil { bottom: 8%; left: 3%; width: 75px; height: 75px; }
+        .floating-icon-art { bottom: 8%; right: 3%; width: 80px; height: 80px; }
+        
+        @media (max-width: 768px) {
+            .floating-icon-toga, .floating-icon-book, .floating-icon-pencil, .floating-icon-art {
+                width: 55px; height: 55px;
+            }
+            .floating-icon-toga i, .floating-icon-book i, .floating-icon-pencil i, .floating-icon-art i {
+                font-size: 1.25rem !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 min-h-screen">
+
+    <!-- RUNNING TEXT / MARQUEE -->
+    <div class="bg-gradient-to-r from-yellow-400 via-orange-400 to-pink-400 text-white py-2 overflow-hidden shadow-md">
+        <div class="whitespace-nowrap marquee font-bold text-sm">
+            🎉 SISTEM PENERIMAAN MURID BARU 2026/2027 TELAH DIBUKA! 📚 Daftar sekarang juga! 🌟 Kuota terbatas hanya 56 siswa! ⏰ Periode: 22 - 27 Juni 2026 🎓 SD Negeri 2 Negara Batin - Menuju Generasi Emas Indonesia! 🚀
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="bg-white/80 backdrop-blur-lg shadow-lg sticky top-0 z-40 border-b border-white/50">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="relative">
+                    <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg float">
+                        <i class="fa-solid fa-school text-white text-2xl"></i>
+                    </div>
+                    <div class="absolute -top-1 -right-1 w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center text-[10px] font-black shadow-md bounce-slow">⭐</div>
+                </div>
+                <div class="hidden md:block">
+                    <p class="text-xs font-bold text-purple-600 uppercase tracking-wider">SD Negeri 2</p>
+                    <p class="text-sm font-black text-gray-800">Negara Batin</p>
+                </div>
+            </div>
+
+            <div class="text-center flex-1 px-2">
+                <h1 class="text-lg md:text-2xl font-black rainbow-text tracking-tight">SISTEM PENERIMAAN MURID BARU 2026</h1>
+                <p class="text-xs md:text-sm font-bold text-gray-600 mt-0.5">Sistem Penerimaan Murid Baru</p>
+            </div>
+
+            <div class="flex items-center space-x-2">
+                <div class="hidden md:flex items-center space-x-2 bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-3 py-1.5 rounded-full shadow-md">
+                    <div class="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                    <span class="text-xs font-bold">LIVE</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav class="bg-white/70 backdrop-blur-md shadow-sm sticky top-[73px] z-30 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 flex overflow-x-auto">
+            <button onclick="switchView('hero-view')" id="btn-hero-view" class="nav-btn px-5 py-4 font-bold text-sm flex items-center space-x-2 border-b-4 border-purple-500 text-purple-700 transition-all shrink-0">
+                <i class="fa-solid fa-house"></i> <span>Beranda</span>
+            </button>
+            <button onclick="switchView('info-view')" id="btn-info-view" class="nav-btn px-5 py-4 font-bold text-sm flex items-center space-x-2 border-b-4 border-transparent text-gray-600 hover:text-purple-600 transition-all shrink-0">
+                <i class="fa-solid fa-circle-info"></i> <span>Informasi</span>
+            </button>
+            <button onclick="switchView('form-view')" id="btn-form-view" class="nav-btn px-5 py-4 font-bold text-sm flex items-center space-x-2 border-b-4 border-transparent text-gray-600 hover:text-purple-600 transition-all shrink-0">
+                <i class="fa-solid fa-pen-to-square"></i> <span>Daftar Sekarang</span>
+            </button>
+            <button onclick="handleAdminNav()" id="btn-admin-view" class="nav-btn px-5 py-4 font-bold text-sm flex items-center space-x-2 border-b-4 border-transparent text-gray-600 hover:text-purple-600 transition-all shrink-0 ml-auto">
+                <i class="fa-solid fa-user-shield"></i> <span>Admin</span>
+            </button>
+            <button onclick="logoutAdmin()" id="btn-logout" class="nav-btn px-5 py-4 font-bold text-sm flex items-center space-x-2 border-b-4 border-transparent text-red-600 hover:text-red-700 transition-all shrink-0 hidden">
+                <i class="fa-solid fa-right-from-bracket"></i> <span>Keluar</span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 py-8">
+
+        <!-- ================= HERO VIEW ================= -->
+        <section id="hero-view" class="view-section space-y-12">
+            <div class="relative overflow-hidden rounded-3xl gradient-bg wave-bg shadow-2xl" style="min-height: 520px;">
+                <div class="floating-icon floating-icon-toga float">
+                    <i class="fa-solid fa-user-graduate text-4xl text-purple-600"></i>
+                </div>
+                <div class="floating-icon floating-icon-book float-delay-1">
+                    <i class="fa-solid fa-book-open text-3xl text-blue-600"></i>
+                </div>
+                <div class="floating-icon floating-icon-pencil float-delay-2">
+                    <i class="fa-solid fa-pencil text-3xl text-orange-500"></i>
+                </div>
+                <div class="floating-icon floating-icon-art float">
+                    <i class="fa-solid fa-palette text-3xl text-pink-500"></i>
+                </div>
+                
+                <div class="relative z-10 p-8 md:p-16 text-white text-center">
+                    <div class="inline-block glass px-6 py-3 rounded-full mb-6 animate-fadeInUp">
+                        <span class="text-sm md:text-base uppercase tracking-wider tahun-pelajaran-text">✨ Tahun Pelajaran 2026/2027 ✨</span>
+                    </div>
+                    <h1 class="text-4xl md:text-7xl font-black mb-4 animate-fadeInUp font-fredoka leading-tight">
+                        <span class="selamat-datang-text">Selamat Datang di</span><br>
+                        <span class="text-yellow-300">SDN 2 Negara Batin</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-white/90 max-w-2xl mx-auto mb-8 animate-fadeInUp">
+                        <span class="generasi-emas-text font-black">Membentuk Generasi Emas</span> yang <span class="font-bold text-yellow-300">Cerdas</span>, 
+                        <span class="font-bold text-pink-300">Kreatif</span>, dan 
+                        <span class="font-bold text-green-300">Berakhlak Mulia</span>
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-4 animate-fadeInUp">
+                        <button onclick="switchView('form-view')" class="bg-white text-purple-700 px-8 py-4 rounded-full font-black text-lg shadow-2xl hover:scale-105 transition-transform pulse-glow">
+                            <i class="fa-solid fa-rocket mr-2"></i> Daftar Sekarang
+                        </button>
+                        <button onclick="switchView('info-view')" class="pelajari-btn px-8 py-4 rounded-full font-black text-lg">
+                            <i class="fa-solid fa-circle-info mr-2"></i> Pelajari Lebih Lanjut
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                <div class="bg-gradient-to-br from-blue-500 to-blue-600 text-white p-6 rounded-2xl shadow-xl card-hover text-center">
+                    <div class="text-4xl md:text-5xl mb-2">🎒</div>
+                    <div class="text-3xl md:text-4xl font-black font-fredoka" data-counter="56">0</div>
+                    <div class="text-xs font-bold uppercase tracking-wider mt-1 opacity-90">Kuota Siswa</div>
+                </div>
+                <div class="bg-gradient-to-br from-purple-500 to-purple-600 text-white p-6 rounded-2xl shadow-xl card-hover text-center">
+                    <div class="text-4xl md:text-5xl mb-2">👨‍🎓👩‍🎓</div>
+                    <div class="text-3xl md:text-4xl font-black font-fredoka" data-counter="12">0</div>
+                    <div class="text-xs font-bold uppercase tracking-wider mt-1 opacity-90">Tenaga Pendidik & Kependidikan Profesional</div>
+                </div>
+                <div class="bg-gradient-to-br from-pink-500 to-pink-600 text-white p-6 rounded-2xl shadow-xl card-hover text-center">
+                    <div class="text-4xl md:text-5xl mb-2">🏆</div>
+                    <div class="text-3xl md:text-4xl font-black font-fredoka" data-counter="25">0</div>
+                    <div class="text-xs font-bold uppercase tracking-wider mt-1 opacity-90">Prestasi</div>
+                </div>
+                <div class="bg-gradient-to-br from-emerald-500 to-emerald-600 text-white p-6 rounded-2xl shadow-xl card-hover text-center">
+                    <div class="text-4xl md:text-5xl mb-2">⭐</div>
+                    <div class="text-3xl md:text-4xl font-black font-fredoka" data-counter="100" data-suffix="%">0</div>
+                    <div class="text-xs font-bold uppercase tracking-wider mt-1 opacity-90">Lulusan Berkualitas</div>
+                </div>
+            </div>
+
+            <div class="text-center mb-8">
+                <h2 class="text-3xl md:text-5xl font-black text-gray-800 mb-3 font-fredoka">
+                    Kenapa Memilih <span class="rainbow-text">Kami?</span>
+                </h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Fasilitas dan program unggulan untuk masa depan putra-putri Anda</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-8 rounded-3xl shadow-xl card-hover border-2 border-transparent hover:border-purple-300 relative overflow-hidden">
+                    <div class="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full opacity-10 blob"></div>
+                    <div class="relative">
+                        <div class="w-20 h-20 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center text-4xl mb-4 shadow-lg sticker">📖</div>
+                        <h3 class="text-xl font-black text-gray-800 mb-2">Kurikulum Merdeka</h3>
+                        <p class="text-gray-600 text-sm">Pembelajaran mendalam yang mengembangkan kreativitas dan karakter siswa secara optimal</p>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-3xl shadow-xl card-hover border-2 border-transparent hover:border-pink-300 relative overflow-hidden">
+                    <div class="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br from-pink-400 to-red-500 rounded-full opacity-10 blob"></div>
+                    <div class="relative">
+                        <div class="w-20 h-20 bg-gradient-to-br from-pink-400 to-pink-600 rounded-2xl flex items-center justify-center mb-4 shadow-lg sticker">
+                            <i class="fa-solid fa-tv text-3xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-black text-gray-800 mb-2">TV Digital</h3>
+                        <p class="text-gray-600 text-sm">Perpustakaan, ruang kelas yang nyaman, dan pembelajaran menggunakan TV Digital interaktif</p>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-3xl shadow-xl card-hover border-2 border-transparent hover:border-emerald-300 relative overflow-hidden">
+                    <div class="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-full opacity-10 blob"></div>
+                    <div class="relative">
+                        <div class="w-20 h-20 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-2xl flex items-center justify-center mb-4 shadow-lg sticker">
+                            <i class="fa-solid fa-futbol text-3xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-black text-gray-800 mb-2">Ekstrakurikuler</h3>
+                        <p class="text-gray-600 text-sm">Beragam kegiatan: seni, olahraga, pramuka, dan pengembangan bakat</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 rounded-3xl p-8 md:p-12 shadow-2xl text-white relative overflow-hidden">
+                <div class="absolute top-0 right-0 text-9xl opacity-10">💬</div>
+                <div class="relative z-10 text-center max-w-4xl mx-auto">
+                    <i class="fa-solid fa-quote-left text-5xl text-yellow-300 mb-4"></i>
+                    <p class="text-base md:text-lg font-bold italic mb-6 leading-relaxed">
+                        "Anak Saya Senang Belajar Di SD Negeri 2 Negarabatin. Kami merasa SD Negeri 2 Negara Batin adalah Mitra yang baik dalam mendidik anak karena memiliki Tenaga Pendidik dan Kependidikan yang Profesional, Berkualitas, Amanah, Jujur, dengan penuh Kasih Sayang serta adanya fasilitas yang memadai"
+                    </p>
+                    <div class="flex items-center justify-center space-x-3">
+                        <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center text-2xl">👩</div>
+                        <div class="text-left">
+                            <div class="font-black">Ibu Rika Yulianti</div>
+                            <div class="text-sm opacity-80">Wali Murid (Ibu Kades)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= INFO VIEW ================= -->
+        <section id="info-view" class="view-section hidden space-y-8">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl md:text-5xl font-black text-gray-800 mb-3 font-fredoka">
+                    📋 Informasi <span class="rainbow-text">Pendaftaran</span>
+                </h2>
+                <p class="text-gray-600">Semua yang perlu Anda ketahui tentang Sistem Penerimaan Murid Baru 2026</p>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-xl p-8 border border-gray-100">
+                <h3 class="text-2xl font-black text-gray-800 mb-8 flex items-center">
+                    <span class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center text-2xl mr-3">📅</span>
+                    Timeline Pendaftaran
+                </h3>
+                <div class="relative">
+                    <div class="absolute left-6 top-0 bottom-0 w-1 bg-gradient-to-b from-purple-500 via-pink-500 to-orange-500 rounded-full"></div>
+                    
+                    <div class="relative pl-20 pb-8">
+                        <div class="absolute left-0 w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center text-white font-black shadow-lg">1</div>
+                        <div class="bg-gradient-to-r from-purple-50 to-transparent p-4 rounded-xl">
+                            <div class="text-xs font-bold text-purple-600 uppercase">Tahap 1</div>
+                            <h4 class="text-xl font-black text-gray-800">Pendaftaran Online</h4>
+                            <p class="text-sm text-gray-600 mt-1">📆 22 - 27 Juni 2026 | Isi formulir secara online</p>
+                        </div>
+                    </div>
+
+                    <div class="relative pl-20 pb-8">
+                        <div class="absolute left-0 w-12 h-12 bg-gradient-to-br from-pink-500 to-pink-600 rounded-full flex items-center justify-center text-white font-black shadow-lg">2</div>
+                        <div class="bg-gradient-to-r from-pink-50 to-transparent p-4 rounded-xl">
+                            <div class="text-xs font-bold text-pink-600 uppercase">Tahap 2</div>
+                            <h4 class="text-xl font-black text-gray-800">Verifikasi Berkas</h4>
+                            <p class="text-sm text-gray-600 mt-1">📆 28 Juni 2026 | Bawa berkas asli ke sekolah</p>
+                        </div>
+                    </div>
+
+                    <div class="relative pl-20 pb-8">
+                        <div class="absolute left-0 w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center text-white font-black shadow-lg">3</div>
+                        <div class="bg-gradient-to-r from-orange-50 to-transparent p-4 rounded-xl">
+                            <div class="text-xs font-bold text-orange-600 uppercase">Tahap 3</div>
+                            <h4 class="text-xl font-black text-gray-800">Pengumuman Hasil</h4>
+                            <p class="text-sm text-gray-600 mt-1">📆 29 Juni 2026 | Cek di website & papan pengumuman</p>
+                        </div>
+                    </div>
+
+                    <div class="relative pl-20 pb-8">
+                        <div class="absolute left-0 w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center text-white font-black shadow-lg">4</div>
+                        <div class="bg-gradient-to-r from-emerald-50 to-transparent p-4 rounded-xl">
+                            <div class="text-xs font-bold text-emerald-600 uppercase">Tahap 4</div>
+                            <h4 class="text-xl font-black text-gray-800">Daftar Ulang</h4>
+                            <p class="text-sm text-gray-600 mt-1">📆 30 Juni 2026 | Registrasi siswa baru</p>
+                        </div>
+                    </div>
+
+                    <div class="relative pl-20">
+                        <div class="absolute left-0 w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center text-white shadow-lg">
+                            <i class="fa-solid fa-calendar-days text-xl"></i>
+                        </div>
+                        <div class="bg-gradient-to-r from-cyan-50 to-transparent p-4 rounded-xl">
+                            <div class="text-xs font-bold text-cyan-600 uppercase">Tahap 5</div>
+                            <h4 class="text-xl font-black text-gray-800">MPLS (Masa Pengenalan Lingkungan Sekolah)</h4>
+                            <p class="text-sm text-gray-600 mt-1">📆 13 - 17 Juli 2026 | Pengenalan lingkungan sekolah bagi siswa baru</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="bg-gradient-to-br from-blue-500 to-indigo-600 text-white p-8 rounded-3xl shadow-xl relative overflow-hidden">
+                    <div class="absolute -top-10 -right-10 text-9xl opacity-10">📝</div>
+                    <h3 class="text-2xl font-black mb-6 flex items-center">
+                        <i class="fa-solid fa-list-check mr-3"></i> Persyaratan
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start bg-white/10 p-3 rounded-xl backdrop-blur-sm">
+                            <span class="text-2xl mr-3">✅</span>
+                            <span>Berusia minimal <strong>6 tahun</strong> pada 1 Juli 2026</span>
+                        </li>
+                        <li class="flex items-start bg-white/10 p-3 rounded-xl backdrop-blur-sm">
+                            <span class="text-2xl mr-3">📄</span>
+                            <span>Fotokopi <strong>Akta Kelahiran</strong></span>
+                        </li>
+                        <li class="flex items-start bg-white/10 p-3 rounded-xl backdrop-blur-sm">
+                            <span class="text-2xl mr-3">👨‍👩‍👧</span>
+                            <span>Fotokopi <strong>Kartu Keluarga (KK)</strong></span>
+                        </li>
+                        <li class="flex items-start bg-white/10 p-3 rounded-xl backdrop-blur-sm">
+                            <span class="text-2xl mr-3">👤</span>
+                            <span>Fotokopi <strong>KTP Orang Tua / Wali</strong></span>
+                        </li>
+                        <li class="flex items-start bg-white/10 p-3 rounded-xl backdrop-blur-sm">
+                            <span class="text-2xl mr-3">🎫</span>
+                            <span>Nomor <strong>KIP/KIS/PKH</strong> (jika ada)</span>
+                        </li>
+                        <li class="flex items-start bg-white/10 p-3 rounded-xl backdrop-blur-sm">
+                            <span class="text-2xl mr-3">📸</span>
+                            <span>Pas foto <strong>3x4</strong> sebanyak 2 lembar</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-br from-emerald-500 to-teal-600 text-white p-8 rounded-3xl shadow-xl relative overflow-hidden">
+                    <div class="absolute -top-10 -right-10 text-9xl opacity-10">🚀</div>
+                    <h3 class="text-2xl font-black mb-6 flex items-center">
+                        <i class="fa-solid fa-route mr-3"></i> Cara Mendaftar
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start bg-white/10 p-4 rounded-xl backdrop-blur-sm">
+                            <div class="w-10 h-10 bg-white text-emerald-600 rounded-full flex items-center justify-center font-black mr-3 shrink-0">1</div>
+                            <div>
+                                <h4 class="font-black">Klik "Daftar Sekarang"</h4>
+                                <p class="text-sm opacity-90">Pilih menu di navigasi atas</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start bg-white/10 p-4 rounded-xl backdrop-blur-sm">
+                            <div class="w-10 h-10 bg-white text-emerald-600 rounded-full flex items-center justify-center font-black mr-3 shrink-0">2</div>
+                            <div>
+                                <h4 class="font-black">Isi Formulir Lengkap</h4>
+                                <p class="text-sm opacity-90">Data siswa, orang tua, dan bantuan sosial</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start bg-white/10 p-4 rounded-xl backdrop-blur-sm">
+                            <div class="w-10 h-10 bg-white text-emerald-600 rounded-full flex items-center justify-center font-black mr-3 shrink-0">3</div>
+                            <div>
+                                <h4 class="font-black">Submit & Simpan Bukti</h4>
+                                <p class="text-sm opacity-90">Catat nomor pendaftaran Anda</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start bg-white/10 p-4 rounded-xl backdrop-blur-sm">
+                            <div class="w-10 h-10 bg-white text-emerald-600 rounded-full flex items-center justify-center font-black mr-3 shrink-0">4</div>
+                            <div>
+                                <h4 class="font-black">Verifikasi di Sekolah</h4>
+                                <p class="text-sm opacity-90">Bawa berkas asli ke sekolah</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-xl p-8 border border-gray-100">
+                <h3 class="text-2xl font-black text-gray-800 mb-6 flex items-center">
+                    <span class="w-12 h-12 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl flex items-center justify-center text-2xl mr-3">❓</span>
+                    Pertanyaan yang Sering Diajukan
+                </h3>
+                <div class="space-y-3">
+                    <details class="group bg-gradient-to-r from-purple-50 to-transparent p-4 rounded-xl cursor-pointer">
+                        <summary class="font-bold text-gray-800 flex items-center justify-between">
+                            <span>🎂 Berapa usia minimal untuk mendaftar?</span>
+                            <i class="fa-solid fa-chevron-down group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <p class="mt-3 text-gray-600 text-sm">Calon siswa harus berusia minimal 6 tahun pada tanggal 1 Juli 2026 (lahir sebelum 1 Juli 2020).</p>
+                    </details>
+                    <details class="group bg-gradient-to-r from-pink-50 to-transparent p-4 rounded-xl cursor-pointer">
+                        <summary class="font-bold text-gray-800 flex items-center justify-between">
+                            <span>💰 Apakah ada biaya pendaftaran?</span>
+                            <i class="fa-solid fa-chevron-down group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <p class="mt-3 text-gray-600 text-sm">Pendaftaran di SDN 2 Negara Batin <strong>GRATIS</strong> dan tidak dipungut biaya apapun.</p>
+                    </details>
+                    <details class="group bg-gradient-to-r from-blue-50 to-transparent p-4 rounded-xl cursor-pointer">
+                        <summary class="font-bold text-gray-800 flex items-center justify-between">
+                            <span>📍 Apakah harus domisili di Negara Batin?</span>
+                            <i class="fa-solid fa-chevron-down group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <p class="mt-3 text-gray-600 text-sm">Tidak harus. Siswa dari luar wilayah Negara Batin dapat mendaftar, dengan prioritas jarak terdekat ke sekolah.</p>
+                    </details>
+                    <details class="group bg-gradient-to-r from-emerald-50 to-transparent p-4 rounded-xl cursor-pointer">
+                        <summary class="font-bold text-gray-800 flex items-center justify-between">
+                            <span>🎫 Apa keuntungan memiliki KIP/KIS/PKH?</span>
+                            <i class="fa-solid fa-chevron-down group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <p class="mt-3 text-gray-600 text-sm">Pemilik kartu bantuan sosial akan mendapat prioritas penerimaan dan bantuan perlengkapan sekolah dari pemerintah.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= FORM VIEW ================= -->
+        <section id="form-view" class="view-section hidden">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl md:text-5xl font-black text-gray-800 mb-3 font-fredoka">
+                        ✍️ Formulir <span class="rainbow-text">Pendaftaran</span>
+                    </h2>
+                    <p class="text-gray-600">Lengkapi data dengan benar dan sesuai dokumen resmi</p>
+                </div>
+
+                <div class="bg-white rounded-3xl shadow-xl p-6 mb-6 border border-gray-100">
+                    <div class="flex items-center justify-between relative">
+                        <div class="absolute top-5 left-0 right-0 h-1 bg-gray-200 rounded-full -z-0"></div>
+                        <div id="progressBar" class="absolute top-5 left-0 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full -z-0 transition-all duration-500" style="width: 33%"></div>
+                        
+                        <div class="progress-step active relative z-10 flex flex-col items-center">
+                            <div class="w-10 h-10 rounded-full flex items-center justify-center font-black shadow-lg">1</div>
+                            <span class="text-xs font-bold mt-2 hidden md:block">Data Siswa</span>
+                        </div>
+                        <div class="progress-step relative z-10 flex flex-col items-center">
+                            <div class="w-10 h-10 bg-white border-2 border-gray-300 rounded-full flex items-center justify-center font-black">2</div>
+                            <span class="text-xs font-bold mt-2 hidden md:block text-gray-500">Orang Tua</span>
+                        </div>
+                        <div class="progress-step relative z-10 flex flex-col items-center">
+                            <div class="w-10 h-10 bg-white border-2 border-gray-300 rounded-full flex items-center justify-center font-black">3</div>
+                            <span class="text-xs font-bold mt-2 hidden md:block text-gray-500">Bantuan</span>
+                        </div>
+                    </div>
+                </div>
+
+                <form id="spmbForm" onsubmit="submitForm(event)" class="space-y-6">
+                    <div id="step1" class="form-step bg-white rounded-3xl shadow-xl p-8 border border-gray-100">
+                        <h3 class="text-xl font-black text-gray-800 mb-6 flex items-center pb-4 border-b-2 border-purple-100">
+                            <span class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center text-2xl mr-3">👦</span>
+                            Data Pribadi Calon Siswa
+                        </h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            <div class="md:col-span-2">
+                                <label class="block text-sm font-bold text-gray-700 mb-2">Nama Lengkap <span class="text-red-500">*</span></label>
+                                <input type="text" id="siswaNama" required placeholder="Sesuai akta kelahiran" class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-purple-500 transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 mb-2">NIK (16 digit) <span class="text-red-500">*</span></label>
+                                <input type="text" id="siswaNik" required maxlength="16" placeholder="1803xxxxxxxxxxxx" class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-purple-500 transition-all font-mono">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 mb-2">Jenis Kelamin <span class="text-red-500">*</span></label>
+                                <select id="siswaJk" required class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-purple-500 transition-all bg-white">
+                                    <option value="">-- Pilih --</option>
+                                    <option value="Laki-laki">👦 Laki-laki</option>
+                                    <option value="Perempuan">👧 Perempuan</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 mb-2">Tempat Lahir <span class="text-red-500">*</span></label>
+                                <input type="text" id="siswaTempatLahir" required class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-purple-500 transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 mb-2">Tanggal Lahir <span class="text-red-500">*</span></label>
+                                <input type="date" id="siswaTanggalLahir" required class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-purple-500 transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 mb-2">Agama <span class="text-red-500">*</span></label>
+                                <select id="siswaAgama" required class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-purple-500 transition-all bg-white">
+                                    <option value="Islam">Islam</option>
+                                    <option value="Kristen">Kristen</option>
+                                    <option value="Katolik">Katolik</option>
+                                    <option value="Hindu">Hindu</option>
+                                    <option value="Buddha">Buddha</option>
+                                    <option value="Khonghucu">Khonghucu</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 mb-2">Anak Ke <span class="text-red-500">*</span></label>
+                                <input type="number" id="siswaAnakKe" required min="1" max="15" placeholder="1" class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-purple-500 transition-all">
+                            </div>
+                            <div class="md:col-span-2">
+                                <label class="block text-sm font-bold text-gray-700 mb-2">Alamat Lengkap <span class="text-red-500">*</span></label>
+                                <textarea id="siswaAlamat" required rows="2" placeholder="Dusun, RT/RW, Desa/Kelurahan" class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-purple-500 transition-all"></textarea>
+                            </div>
+                        </div>
+                        <div class="flex justify-end mt-6">
+                            <button type="button" onclick="nextStep(2)" class="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-3 rounded-xl font-black shadow-lg hover:scale-105 transition-transform">
+                                Lanjut <i class="fa-solid fa-arrow-right ml-2"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="step2" class="form-step hidden bg-white rounded-3xl shadow-xl p-8 border border-gray-100">
+                        <h3 class="text-xl font-black text-gray-800 mb-6 flex items-center pb-4 border-b-2 border-blue-100">
+                            <span class="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center text-2xl mr-3">👨‍👩‍👧</span>
+                            Data Orang Tua / Wali
+                        </h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 mb-2">Nama Ayah <span class="text-red-500">*</span></label>
+                                <input type="text" id="ortuAyah" required class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-blue-500 transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 mb-2">Pekerjaan Ayah <span class="text-red-500">*</span></label>
+                                <input type="text" id="ortuPekerjaanAyah" required placeholder="Petani, PNS, dll" class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-blue-500 transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 mb-2">Nama Ibu <span class="text-red-500">*</span></label>
+                                <input type="text" id="ortuIbu" required class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-blue-500 transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 mb-2">Pekerjaan Ibu <span class="text-red-500">*</span></label>
+                                <input type="text" id="ortuPekerjaanIbu" required class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-blue-500 transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 mb-2">No. HP / WhatsApp <span class="text-red-500">*</span></label>
+                                <input type="tel" id="ortuHp" required placeholder="08xxxxxxxxxx" class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-blue-500 transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 mb-2">Penghasilan Orang Tua <span class="text-red-500">*</span></label>
+                                <select id="ortuPenghasilan" required class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-blue-500 transition-all bg-white">
+                                    <option value="< 1 Juta">< 1 Juta/bulan</option>
+                                    <option value="1-3 Juta">1 - 3 Juta/bulan</option>
+                                    <option value="3-5 Juta">3 - 5 Juta/bulan</option>
+                                    <option value="> 5 Juta">> 5 Juta/bulan</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="flex justify-between mt-6">
+                            <button type="button" onclick="prevStep(1)" class="bg-gray-200 text-gray-700 px-8 py-3 rounded-xl font-black hover:bg-gray-300 transition-all">
+                                <i class="fa-solid fa-arrow-left mr-2"></i> Kembali
+                            </button>
+                            <button type="button" onclick="nextStep(3)" class="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-8 py-3 rounded-xl font-black shadow-lg hover:scale-105 transition-transform">
+                                Lanjut <i class="fa-solid fa-arrow-right ml-2"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="step3" class="form-step hidden bg-white rounded-3xl shadow-xl p-8 border border-gray-100">
+                        <h3 class="text-xl font-black text-gray-800 mb-6 flex items-center pb-4 border-b-2 border-emerald-100">
+                            <span class="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-xl flex items-center justify-center text-2xl mr-3">🎫</span>
+                            Program Bantuan Sosial (Opsional)
+                        </h3>
+                        <div class="bg-gradient-to-r from-yellow-50 to-orange-50 border-2 border-yellow-200 rounded-2xl p-4 mb-6">
+                            <p class="text-sm text-gray-700">
+                                <i class="fa-solid fa-circle-info text-yellow-600 mr-2"></i>
+                                <strong>Info:</strong> Kosongkan kolom di bawah jika tidak memiliki kartu bantuan sosial. Data ini akan digunakan untuk prioritas penerimaan dan bantuan Dapodik.
+                            </p>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                            <div class="bg-gradient-to-br from-amber-50 to-orange-50 p-5 rounded-2xl border-2 border-amber-200 card-hover">
+                                <div class="text-4xl mb-2">🎓</div>
+                                <label class="block text-sm font-black text-amber-900 mb-2">Kartu Indonesia Pintar (KIP)</label>
+                                <input type="text" id="bantuanKip" placeholder="Nomor KIP" class="w-full px-3 py-2 border-2 border-amber-300 rounded-lg focus:outline-none focus:border-amber-500 bg-white text-sm">
+                            </div>
+                            <div class="bg-gradient-to-br from-emerald-50 to-teal-50 p-5 rounded-2xl border-2 border-emerald-200 card-hover">
+                                <div class="text-4xl mb-2">💚</div>
+                                <label class="block text-sm font-black text-emerald-900 mb-2">Kartu Indonesia Sehat (KIS)</label>
+                                <input type="text" id="bantuanKis" placeholder="Nomor KIS" class="w-full px-3 py-2 border-2 border-emerald-300 rounded-lg focus:outline-none focus:border-emerald-500 bg-white text-sm">
+                            </div>
+                            <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-5 rounded-2xl border-2 border-purple-200 card-hover">
+                                <div class="text-4xl mb-2">💜</div>
+                                <label class="block text-sm font-black text-purple-900 mb-2">Program Keluarga Harapan (PKH)</label>
+                                <input type="text" id="bantuanPkh" placeholder="Nomor PKH" class="w-full px-3 py-2 border-2 border-purple-300 rounded-lg focus:outline-none focus:border-purple-500 bg-white text-sm">
+                            </div>
+                        </div>
+
+                        <div class="mt-6 bg-blue-50 p-4 rounded-2xl border-2 border-blue-200">
+                            <label class="flex items-start cursor-pointer">
+                                <input type="checkbox" id="persetujuan" required class="mt-1 w-5 h-5 accent-purple-600">
+                                <span class="ml-3 text-sm text-gray-700">
+                                    Saya menyatakan bahwa data yang saya isi adalah <strong>benar dan dapat dipertanggungjawabkan</strong>. Saya bersedia menerima sanksi apabila data yang diberikan tidak sesuai.
+                                </span>
+                            </label>
+                        </div>
+
+                        <div class="flex justify-between mt-6">
+                            <button type="button" onclick="prevStep(2)" class="bg-gray-200 text-gray-700 px-8 py-3 rounded-xl font-black hover:bg-gray-300 transition-all">
+                                <i class="fa-solid fa-arrow-left mr-2"></i> Kembali
+                            </button>
+                            <button type="submit" id="submitBtn" class="bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-8 py-3 rounded-xl font-black shadow-lg hover:scale-105 transition-transform pulse-glow">
+                                <i class="fa-solid fa-paper-plane mr-2"></i> Kirim Pendaftaran
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- ================= LOGIN VIEW ================= -->
+        <section id="login-view" class="view-section hidden">
+            <div class="max-w-md mx-auto">
+                <div class="bg-white rounded-3xl shadow-2xl p-8 border border-gray-100 relative overflow-hidden">
+                    <div class="absolute -top-20 -right-20 w-40 h-40 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full opacity-20 blob"></div>
+                    <div class="absolute -bottom-20 -left-20 w-40 h-40 bg-gradient-to-br from-blue-400 to-cyan-400 rounded-full opacity-20 blob"></div>
+                    
+                    <div class="relative text-center mb-6">
+                        <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-xl float">
+                            <i class="fa-solid fa-user-shield text-white text-3xl"></i>
+                        </div>
+                        <h2 class="text-2xl font-black text-gray-800">Login Administrator</h2>
+                        <p class="text-sm text-gray-500 mt-1">Masuk ke Dashboard Panitia Sistem Penerimaan Murid Baru</p>
+                    </div>
+                    <form onsubmit="prosesLoginAdmin(event)" class="space-y-4 relative">
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 mb-2">Username</label>
+                            <div class="relative">
+                                <i class="fa-solid fa-user absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                                <input type="text" id="loginUser" required class="w-full pl-11 pr-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-purple-500 transition-all" placeholder="admin">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 mb-2">Password</label>
+                            <div class="relative">
+                                <i class="fa-solid fa-lock absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                                <input type="password" id="loginPass" required class="w-full pl-11 pr-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-purple-500 transition-all" placeholder="••••••••">
+                            </div>
+                        </div>
+                        <button type="submit" class="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white py-3 rounded-xl font-black shadow-lg hover:scale-105 transition-transform">
+                            <i class="fa-solid fa-right-to-bracket mr-2"></i> Masuk Sistem
+                        </button>
+                        <div class="text-center text-xs text-gray-500 mt-4 bg-gradient-to-r from-purple-50 to-pink-50 p-3 rounded-xl border border-purple-200">
+                            <i class="fa-solid fa-user-shield mr-1 text-purple-600"></i> <strong class="text-purple-700">Tim Verifikasi SD Negeri 2 Negara Batin</strong>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= ADMIN VIEW ================= -->
+        <section id="admin-view" class="view-section hidden space-y-6">
+            <div class="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 rounded-3xl p-8 shadow-2xl text-white relative overflow-hidden">
+                <div class="absolute top-0 right-0 text-9xl opacity-10">📊</div>
+                <div class="relative z-10">
+                    <h2 class="text-3xl md:text-4xl font-black mb-2 font-fredoka">Dashboard Admin</h2>
+                    <p class="opacity-90">Selamat datang, Panitia Sistem Penerimaan Murid Baru SDN 2 Negara Batin</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-gradient-to-br from-blue-500 to-blue-600 text-white p-5 rounded-2xl shadow-xl card-hover">
+                    <div class="flex items-center justify-between mb-2">
+                        <div class="text-3xl">👥</div>
+                        <span class="text-xs bg-white/20 px-2 py-1 rounded-full font-bold">TOTAL</span>
+                    </div>
+                    <div id="statTotal" class="text-4xl font-black font-fredoka">0</div>
+                    <div class="text-xs font-bold uppercase tracking-wider mt-1 opacity-90">Pendaftar</div>
+                </div>
+                <div class="bg-gradient-to-br from-amber-500 to-orange-500 text-white p-5 rounded-2xl shadow-xl card-hover">
+                    <div class="flex items-center justify-between mb-2">
+                        <div class="text-3xl">🎓</div>
+                        <span class="text-xs bg-white/20 px-2 py-1 rounded-full font-bold">KIP</span>
+                    </div>
+                    <div id="statKip" class="text-4xl font-black font-fredoka">0</div>
+                    <div class="text-xs font-bold uppercase tracking-wider mt-1 opacity-90">Pemilik KIP</div>
+                </div>
+                <div class="bg-gradient-to-br from-emerald-500 to-teal-500 text-white p-5 rounded-2xl shadow-xl card-hover">
+                    <div class="flex items-center justify-between mb-2">
+                        <div class="text-3xl">💚</div>
+                        <span class="text-xs bg-white/20 px-2 py-1 rounded-full font-bold">KIS</span>
+                    </div>
+                    <div id="statKis" class="text-4xl font-black font-fredoka">0</div>
+                    <div class="text-xs font-bold uppercase tracking-wider mt-1 opacity-90">Pemilik KIS</div>
+                </div>
+                <div class="bg-gradient-to-br from-purple-500 to-pink-500 text-white p-5 rounded-2xl shadow-xl card-hover">
+                    <div class="flex items-center justify-between mb-2">
+                        <div class="text-3xl">💜</div>
+                        <span class="text-xs bg-white/20 px-2 py-1 rounded-full font-bold">PKH</span>
+                    </div>
+                    <div id="statPkh" class="text-4xl font-black font-fredoka">0</div>
+                    <div class="text-xs font-bold uppercase tracking-wider mt-1 opacity-90">Penerima PKH</div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="bg-white rounded-3xl shadow-xl p-6 border border-gray-100">
+                    <h3 class="font-black text-gray-800 mb-4 flex items-center">
+                        <i class="fa-solid fa-chart-pie text-purple-500 mr-2"></i> Distribusi Jenis Kelamin
+                    </h3>
+                    <div id="genderChart" class="flex items-center justify-around py-4"></div>
+                </div>
+                <div class="bg-white rounded-3xl shadow-xl p-6 border border-gray-100">
+                    <h3 class="font-black text-gray-800 mb-4 flex items-center">
+                        <i class="fa-solid fa-chart-bar text-pink-500 mr-2"></i> Status Bantuan Sosial
+                    </h3>
+                    <div id="bansosChart" class="space-y-3 py-4"></div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
+                <div class="p-6 border-b border-gray-100 bg-gradient-to-r from-purple-50 to-pink-50 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+                    <div>
+                        <h3 class="font-black text-gray-800 text-lg flex items-center">
+                            <i class="fa-solid fa-table-list text-purple-500 mr-2"></i> Database Pendaftar
+                        </h3>
+                        <p class="text-xs text-gray-500 mt-1">Kelola data calon siswa baru</p>
+                    </div>
+                    <div class="flex gap-2">
+                        <div class="relative">
+                            <i class="fa-solid fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                            <input type="text" id="searchInput" onkeyup="renderAdminDashboard()" placeholder="Cari nama/NIK..." class="pl-10 pr-4 py-2 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-purple-500 text-sm w-full md:w-64">
+                        </div>
+                        <button onclick="exportData()" class="bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-4 py-2 rounded-xl font-bold text-sm shadow-md hover:scale-105 transition-transform">
+                            <i class="fa-solid fa-download mr-1"></i> Export
+                        </button>
+                        <button onclick="clearDatabase()" class="bg-gradient-to-r from-red-500 to-pink-500 text-white px-4 py-2 rounded-xl font-bold text-sm shadow-md hover:scale-105 transition-transform">
+                            <i class="fa-solid fa-trash mr-1"></i> Reset
+                        </button>
+                    </div>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left">
+                        <thead class="bg-gradient-to-r from-purple-100 to-pink-100">
+                            <tr class="text-gray-700 font-bold text-xs uppercase">
+                                <th class="p-4">No</th>
+                                <th class="p-4">Nama Siswa</th>
+                                <th class="p-4">NIK</th>
+                                <th class="p-4">L/P</th>
+                                <th class="p-4">Orang Tua</th>
+                                <th class="p-4 text-center">Bantuan</th>
+                                <th class="p-4 text-center">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminTableBody" class="divide-y divide-gray-100"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-gradient-to-br from-gray-900 via-purple-900 to-indigo-900 text-white mt-12 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500"></div>
+        <div class="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="md:col-span-2">
+                <div class="flex items-center space-x-3 mb-4">
+                    <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center">
+                        <i class="fa-solid fa-school text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-black text-lg">SDN 2 Negara Batin</h3>
+                        <p class="text-xs opacity-80">Negara Batin II, Kec. Sungkai Utara</p>
+                    </div>
+                </div>
+                <p class="text-sm opacity-80 mb-4">Membentuk generasi emas yang cerdas, kreatif, dan berakhlak mulia untuk Indonesia yang lebih baik.</p>
+                <div class="flex space-x-3">
+                    <a href="#" class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center hover:bg-white/20 transition-all"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center hover:bg-white/20 transition-all"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="mailto:sdnegeri2negarabatin@gmail.com" class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center hover:bg-white/20 transition-all"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="https://wa.me/6285377915765" target="_blank" class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center hover:bg-white/20 transition-all"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-black mb-4">📞 Kontak Kami</h4>
+                <ul class="space-y-3 text-sm opacity-90">
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-location-dot mr-2 mt-1 text-pink-300"></i>
+                        <span>Negara Batin II, Kec. Sungkai Utara, Kab. Lampung Utara, Provinsi Lampung</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-user-tie mr-2 mt-1 text-pink-300"></i>
+                        <div>
+                            <div class="font-bold">Sutarmi, S.Pd.I.</div>
+                            <a href="https://wa.me/6285379431592" target="_blank" class="text-pink-200 hover:text-yellow-300 transition-colors flex items-center">
+                                <i class="fa-brands fa-whatsapp mr-1"></i> 0853-7943-1592
+                            </a>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-user-tie mr-2 mt-1 text-pink-300"></i>
+                        <div>
+                            <div class="font-bold">Umi Nurjanah, S.Pd.</div>
+                            <a href="https://wa.me/6285377915765" target="_blank" class="text-pink-200 hover:text-yellow-300 transition-colors flex items-center">
+                                <i class="fa-brands fa-whatsapp mr-1"></i> 0853-7791-5765
+                            </a>
+                        </div>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fa-solid fa-envelope mr-2 text-pink-300"></i>
+                        <a href="mailto:sdnegeri2negarabatin@gmail.com" class="hover:text-yellow-300 transition-colors break-all text-xs">sdnegeri2negarabatin@gmail.com</a>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fa-solid fa-envelope mr-2 text-pink-300"></i>
+                        <a href="mailto:gustittadani@gmail.com" class="hover:text-yellow-300 transition-colors break-all text-xs">gustittadani@gmail.com</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-black mb-4">🔗 Tautan</h4>
+                <ul class="space-y-2 text-sm opacity-80">
+                    <li><a href="#" onclick="switchView('hero-view'); return false;" class="hover:text-yellow-300 transition-colors">Beranda</a></li>
+                    <li><a href="#" onclick="switchView('info-view'); return false;" class="hover:text-yellow-300 transition-colors">Sistem Penerimaan Murid Baru</a></li>
+                    <li><a href="#" onclick="switchView('form-view'); return false;" class="hover:text-yellow-300 transition-colors">Daftar Online</a></li>
+                    <li><a href="mailto:gustittadani@gmail.com" class="hover:text-yellow-300 transition-colors">Hubungi Kami</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-white/10 py-5 text-center">
+            <p class="font-black text-base text-white">Sistem Penerimaan Murid Baru</p>
+            <p class="text-sm opacity-80 mt-1 font-bold">TP 2026/2027</p>
+            <p class="mt-2 text-xs opacity-70">Made with <span class="font-bold">Tim IT SD Negeri 2 Negara Batin</span></p>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toastContainer" class="fixed top-24 right-4 z-50 space-y-2"></div>
+
+    <!-- Modal -->
+    <div id="modal" class="fixed inset-0 modal-overlay z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <script>
+        // ============================================
+        // 📧 KONFIGURASI EMAILJS
+        // ============================================
+        const EMAILJS_CONFIG = {
+            PUBLIC_KEY: "OFD3HcugAY3E96ttF",
+            SERVICE_ID: "service_m7km81t",
+            TEMPLATE_ID: "template_asprk6n",
+            EMAIL_TUJUAN: "gustittadani@gmail.com"
+        };
+
+        // Inisialisasi EmailJS
+        (function() {
+            emailjs.init({ publicKey: EMAILJS_CONFIG.PUBLIC_KEY });
+        })();
+
+        // ============ STATE ============
+        let statusLoginAdmin = false;
+        let currentStep = 1;
+
+        const initialMockData = [
+            {
+                nama: "Budi Setiawan", nik: "1803051212190001", jk: "Laki-laki",
+                tempatLahir: "Negara Batin", tanggalLahir: "2019-12-12", agama: "Islam", anakKe: "1",
+                alamat: "RT 02 Dusun 1", ayah: "Supardi", pekerjaanAyah: "Petani",
+                ibu: "Siti Aminah", pekerjaanIbu: "IRT", hp: "085279641122",
+                penghasilan: "1-3 Juta", kip: "KIP-99823", kis: "0001245637281", pkh: "PKH-882736",
+                tanggalDaftar: "2026-06-20T08:30:00"
+            },
+            {
+                nama: "Aisyah Putri", nik: "1803054405200003", jk: "Perempuan",
+                tempatLahir: "Kotabumi", tanggalLahir: "2020-05-04", agama: "Islam", anakKe: "2",
+                alamat: "Dusun 3 RT 01", ayah: "Rahmat Hidayat", pekerjaanAyah: "Wiraswasta",
+                ibu: "Rinaawati", pekerjaanIbu: "Guru", hp: "081369552233",
+                penghasilan: "3-5 Juta", kip: "", kis: "0001988273645", pkh: "",
+                tanggalDaftar: "2026-06-21T10:15:00"
+            },
+            {
+                nama: "Ahmad Fauzi", nik: "1803050103200005", jk: "Laki-laki",
+                tempatLahir: "Negara Batin", tanggalLahir: "2019-08-15", agama: "Islam", anakKe: "3",
+                alamat: "Dusun 2 RT 03", ayah: "Hartono", pekerjaanAyah: "Buruh",
+                ibu: "Suyatmi", pekerjaanIbu: "Petani", hp: "082188776655",
+                penghasilan: "< 1 Juta", kip: "KIP-12345", kis: "", pkh: "PKH-54321",
+                tanggalDaftar: "2026-06-22T09:00:00"
+            }
+        ];
+
+        if (!localStorage.getItem("pendaftarData")) {
+            localStorage.setItem("pendaftarData", JSON.stringify(initialMockData));
+        }
+
+        // ============ NAVIGATION ============
+        function switchView(viewId) {
+            document.querySelectorAll('.view-section').forEach(s => s.classList.add('hidden'));
+            document.getElementById(viewId).classList.remove('hidden');
+
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('border-purple-500', 'text-purple-700');
+                btn.classList.add('border-transparent', 'text-gray-600');
+            });
+            const btn = document.getElementById('btn-' + viewId);
+            if (btn) {
+                btn.classList.add('border-purple-500', 'text-purple-700');
+                btn.classList.remove('border-transparent', 'text-gray-600');
+            }
+
+            if (viewId === 'hero-view') animateCounters();
+            if (viewId === 'admin-view') renderAdminDashboard();
+            if (viewId === 'form-view') resetFormSteps();
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // ============ COUNTER ANIMATION ============
+        function animateCounters() {
+            document.querySelectorAll('[data-counter]').forEach(el => {
+                const target = parseInt(el.dataset.counter);
+                const suffix = el.dataset.suffix || '';
+                let current = 0;
+                const step = target / 50;
+                const timer = setInterval(() => {
+                    current += step;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    el.textContent = Math.floor(current) + suffix;
+                }, 30);
+            });
+        }
+
+        // ============ MULTI-STEP FORM ============
+        function nextStep(step) {
+            if (currentStep === 1) {
+                const required = ['siswaNama', 'siswaNik', 'siswaJk', 'siswaTempatLahir', 'siswaTanggalLahir', 'siswaAgama', 'siswaAnakKe', 'siswaAlamat'];
+                for (let id of required) {
+                    if (!document.getElementById(id).value) {
+                        showToast('Mohon lengkapi semua data yang wajib diisi!', 'error');
+                        document.getElementById(id).focus();
+                        document.getElementById(id).classList.add('shake');
+                        setTimeout(() => document.getElementById(id).classList.remove('shake'), 500);
+                        return;
+                    }
+                }
+                const nik = document.getElementById('siswaNik').value;
+                if (!/^\d{16}$/.test(nik)) {
+                    showToast('NIK harus 16 digit angka!', 'error');
+                    return;
+                }
+                if (checkDuplicateNIK(nik)) {
+                    showToast('NIK sudah terdaftar dalam sistem!', 'error');
+                    return;
+                }
+                if (!validateAge(document.getElementById('siswaTanggalLahir').value)) {
+                    showToast('Usia minimal 6 tahun pada 1 Juli 2026!', 'error');
+                    return;
+                }
+            }
+            if (currentStep === 2) {
+                const required = ['ortuAyah', 'ortuPekerjaanAyah', 'ortuIbu', 'ortuPekerjaanIbu', 'ortuHp', 'ortuPenghasilan'];
+                for (let id of required) {
+                    if (!document.getElementById(id).value) {
+                        showToast('Mohon lengkapi semua data orang tua!', 'error');
+                        return;
+                    }
+                }
+            }
+
+            document.getElementById('step' + currentStep).classList.add('hidden');
+            document.getElementById('step' + step).classList.remove('hidden');
+            currentStep = step;
+            updateProgress();
+            window.scrollTo({ top: 200, behavior: 'smooth' });
+        }
+
+        function prevStep(step) {
+            document.getElementById('step' + currentStep).classList.add('hidden');
+            document.getElementById('step' + step).classList.remove('hidden');
+            currentStep = step;
+            updateProgress();
+        }
+
+        function updateProgress() {
+            const steps = document.querySelectorAll('.progress-step');
+            steps.forEach((s, i) => {
+                s.classList.remove('active', 'completed');
+                if (i + 1 < currentStep) s.classList.add('completed');
+                else if (i + 1 === currentStep) s.classList.add('active');
+            });
+            document.getElementById('progressBar').style.width = ((currentStep - 1) / 2 * 100) + '%';
+        }
+
+        function resetFormSteps() {
+            currentStep = 1;
+            document.querySelectorAll('.form-step').forEach(s => s.classList.add('hidden'));
+            document.getElementById('step1').classList.remove('hidden');
+            updateProgress();
+        }
+
+        // ============ VALIDATION ============
+        function validateNIK(nik) { return /^\d{16}$/.test(nik); }
+        function validateAge(tgl) {
+            const birth = new Date(tgl);
+            const cutoff = new Date('2020-07-01');
+            return birth <= cutoff;
+        }
+        function checkDuplicateNIK(nik) {
+            const data = JSON.parse(localStorage.getItem("pendaftarData") || "[]");
+            return data.some(d => d.nik === nik);
+        }
+
+        // ============================================
+        // 🔢 GENERATE NOMOR PENDAFTARAN (SPMBSDN2NEBA-XXXX)
+        // ============================================
+        function generateNomorPendaftaran(index) {
+            return 'SPMBSDN2NEBA-' + index.toString().padStart(4, '0');
+        }
+
+        // ============ FORM SUBMIT ============
+        function submitForm(event) {
+            event.preventDefault();
+            if (!document.getElementById('persetujuan').checked) {
+                showToast('Anda harus menyetujui pernyataan!', 'error');
+                return;
+            }
+
+            const submitBtn = document.getElementById('submitBtn');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i> Memproses...';
+
+            const newData = {
+                nama: document.getElementById('siswaNama').value,
+                nik: document.getElementById('siswaNik').value,
+                jk: document.getElementById('siswaJk').value,
+                tempatLahir: document.getElementById('siswaTempatLahir').value,
+                tanggalLahir: document.getElementById('siswaTanggalLahir').value,
+                agama: document.getElementById('siswaAgama').value,
+                anakKe: document.getElementById('siswaAnakKe').value,
+                alamat: document.getElementById('siswaAlamat').value,
+                ayah: document.getElementById('ortuAyah').value,
+                pekerjaanAyah: document.getElementById('ortuPekerjaanAyah').value,
+                ibu: document.getElementById('ortuIbu').value,
+                pekerjaanIbu: document.getElementById('ortuPekerjaanIbu').value,
+                hp: document.getElementById('ortuHp').value,
+                penghasilan: document.getElementById('ortuPenghasilan').value,
+                kip: document.getElementById('bantuanKip').value,
+                kis: document.getElementById('bantuanKis').value,
+                pkh: document.getElementById('bantuanPkh').value,
+                tanggalDaftar: new Date().toISOString()
+            };
+
+            const data = JSON.parse(localStorage.getItem("pendaftarData") || "[]");
+            data.push(newData);
+            localStorage.setItem("pendaftarData", JSON.stringify(data));
+
+            const nomorPendaftaran = generateNomorPendaftaran(data.length);
+
+            // ============================================
+            // 📧 KIRIM DATA KE EMAIL VIA EMAILJS
+            // ============================================
+            kirimEmailPendaftaran(newData, nomorPendaftaran);
+
+            // Confetti
+            confetti({ particleCount: 150, spread: 90, origin: { y: 0.6 }, colors: ['#667eea', '#764ba2', '#f093fb', '#4facfe', '#43e97b'] });
+            setTimeout(() => confetti({ particleCount: 100, angle: 60, spread: 55, origin: { x: 0 } }), 200);
+            setTimeout(() => confetti({ particleCount: 100, angle: 120, spread: 55, origin: { x: 1 } }), 400);
+
+            // Tampilkan modal sukses dengan tombol download
+            showSuccessModalWithDownload(newData, nomorPendaftaran);
+            document.getElementById('spmbForm').reset();
+            resetFormSteps();
+
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalText;
+        }
+
+        // ============================================
+        // 📧 FUNGSI KIRIM EMAIL VIA EMAILJS
+        // ============================================
+        function kirimEmailPendaftaran(data, nomor) {
+            const tanggalDaftar = new Date(data.tanggalDaftar).toLocaleString('id-ID', {
+                weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
+                hour: '2-digit', minute: '2-digit'
+            });
+
+            const subject = `Pendaftaran Baru: ${data.nama} - ${nomor} - SDN 2 Negara Batin`;
+
+            const messageBody = `
+📋 DATA PENDAFTARAN BARU
+SISTEM PENERIMAAN MURID BARU
+SD NEGERI 2 NEGARA BATIN - TP 2026/2027
+═══════════════════════════════════════
+
+🔢 NOMOR PENDAFTARAN: ${nomor}
+📅 TANGGAL DAFTAR: ${tanggalDaftar}
+
+═══════════════════════════════════════
+👦 DATA CALON SISWA
+═══════════════════════════════════════
+• Nama Lengkap    : ${data.nama}
+• NIK             : ${data.nik}
+• Jenis Kelamin   : ${data.jk}
+• Tempat Lahir    : ${data.tempatLahir}
+• Tanggal Lahir   : ${data.tanggalLahir}
+• Agama           : ${data.agama}
+• Anak Ke         : ${data.anakKe}
+• Alamat          : ${data.alamat}
+
+═══════════════════════════════════════
+👨‍👩‍👧 DATA ORANG TUA / WALI
+═══════════════════════════════════════
+• Nama Ayah       : ${data.ayah}
+• Pekerjaan Ayah  : ${data.pekerjaanAyah}
+• Nama Ibu        : ${data.ibu}
+• Pekerjaan Ibu   : ${data.pekerjaanIbu}
+• No. HP/WA       : ${data.hp}
+• Penghasilan     : ${data.penghasilan}
+
+═══════════════════════════════════════
+🎫 BANTUAN SOSIAL
+═══════════════════════════════════════
+• KIP             : ${data.kip || '-'}
+• KIS             : ${data.kis || '-'}
+• PKH             : ${data.pkh || '-'}
+
+═══════════════════════════════════════
+📧 Email ini dikirim otomatis oleh
+Sistem Penerimaan Murid Baru
+SD Negeri 2 Negara Batin
+            `.trim();
+
+            // Template parameters untuk EmailJS
+            const templateParams = {
+                to_email: EMAILJS_CONFIG.EMAIL_TUJUAN,
+                subject: subject,
+                message: messageBody,
+                nomor_pendaftaran: nomor,
+                nama_siswa: data.nama,
+                nik_siswa: data.nik,
+                jenis_kelamin: data.jk,
+                tempat_lahir: data.tempatLahir,
+                tanggal_lahir: data.tanggalLahir,
+                agama: data.agama,
+                alamat: data.alamat,
+                nama_ayah: data.ayah,
+                pekerjaan_ayah: data.pekerjaanAyah,
+                nama_ibu: data.ibu,
+                pekerjaan_ibu: data.pekerjaanIbu,
+                no_hp: data.hp,
+                penghasilan: data.penghasilan,
+                kip: data.kip || '-',
+                kis: data.kis || '-',
+                pkh: data.pkh || '-',
+                tanggal_daftar: tanggalDaftar
+            };
+
+            emailjs.send(EMAILJS_CONFIG.SERVICE_ID, EMAILJS_CONFIG.TEMPLATE_ID, templateParams)
+                .then(function(response) {
+                    console.log('Email berhasil dikirim!', response.status, response.text);
+                    showToast('📧 Data pendaftaran berhasil dikirim ke email admin!', 'success');
+                }, function(error) {
+                    console.error('Gagal mengirim email:', error);
+                    showToast('⚠️ Gagal mengirim email otomatis. Data tetap tersimpan di sistem.', 'error');
+                });
+        }
+
+        // ============================================
+        // 📥 DOWNLOAD BUKTI PENDAFTARAN (HTML → PDF)
+        // ============================================
+        function downloadBukti(data, nomor) {
+            const tanggalDaftar = new Date(data.tanggalDaftar).toLocaleString('id-ID', {
+                weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
+                hour: '2-digit', minute: '2-digit'
+            });
+
+            const fullHTML = `<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Bukti Pendaftaran - ${nomor}</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
+    * { font-family: 'Plus Jakarta Sans', Arial, sans-serif; box-sizing: border-box; }
+    body { margin: 0; padding: 20px; background: #f1f5f9; }
+    .bukti { background: white; padding: 40px; max-width: 800px; margin: 0 auto; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border-radius: 12px; }
+    .header { text-align: center; border-bottom: 3px double #667eea; padding-bottom: 15px; margin-bottom: 20px; }
+    .header h1 { margin: 0; color: #1e3a8a; font-size: 24px; }
+    .header h2 { margin: 5px 0; color: #667eea; font-size: 18px; }
+    .header p { margin: 0; color: #475569; font-size: 13px; }
+    .nomor-box { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 12px; text-align: center; margin: 20px 0; }
+    .nomor-box .label { margin: 0; font-size: 12px; opacity: 0.9; letter-spacing: 2px; }
+    .nomor-box h2 { margin: 10px 0; font-size: 32px; letter-spacing: 2px; }
+    .nomor-box .tanggal { margin: 0; font-size: 11px; opacity: 0.9; }
+    .section { margin-bottom: 20px; padding: 15px; background: #f8fafc; border-left: 4px solid #667eea; border-radius: 8px; }
+    .section h3 { color: #667eea; margin: 0 0 10px 0; font-size: 15px; }
+    .row { display: flex; padding: 8px 0; border-bottom: 1px dashed #e2e8f0; font-size: 14px; }
+    .row:last-child { border-bottom: none; }
+    .label { width: 200px; font-weight: 600; color: #475569; }
+    .value { flex: 1; color: #1e293b; }
+    .peringatan { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 15px; border-radius: 8px; margin: 20px 0; }
+    .peringatan strong { color: #92400e; }
+    .peringatan p { margin: 5px 0 0 0; font-size: 13px; color: #78350f; }
+    .footer { margin-top: 30px; padding-top: 20px; border-top: 2px solid #e2e8f0; text-align: center; font-size: 11px; color: #64748b; }
+    .btn-print { display: block; margin: 20px auto; background: #667eea; color: white; border: none; padding: 12px 30px; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 14px; }
+    .btn-print:hover { background: #764ba2; }
+    @media print {
+        body { background: white; padding: 0; }
+        .bukti { box-shadow: none; border-radius: 0; }
+        .btn-print { display: none; }
+    }
+</style>
+</head>
+<body>
+<div class="bukti">
+    <div class="header">
+        <h1>📋 BUKTI PENDAFTARAN</h1>
+        <h2>SISTEM PENERIMAAN MURID BARU</h2>
+        <p>SD NEGERI 2 NEGARA BATIN</p>
+        <p>Tahun Pelajaran 2026/2027</p>
+    </div>
+
+    <div class="nomor-box">
+        <p class="label">NOMOR PENDAFTARAN</p>
+        <h2>${nomor}</h2>
+        <p class="tanggal">📅 ${tanggalDaftar}</p>
+    </div>
+
+    <div class="section">
+        <h3>👦 DATA CALON SISWA</h3>
+        <div class="row"><span class="label">Nama Lengkap</span><span class="value">: ${data.nama}</span></div>
+        <div class="row"><span class="label">NIK</span><span class="value">: ${data.nik}</span></div>
+        <div class="row"><span class="label">Jenis Kelamin</span><span class="value">: ${data.jk}</span></div>
+        <div class="row"><span class="label">Tempat, Tanggal Lahir</span><span class="value">: ${data.tempatLahir}, ${data.tanggalLahir}</span></div>
+        <div class="row"><span class="label">Agama</span><span class="value">: ${data.agama}</span></div>
+        <div class="row"><span class="label">Anak Ke-</span><span class="value">: ${data.anakKe}</span></div>
+        <div class="row"><span class="label">Alamat</span><span class="value">: ${data.alamat}</span></div>
+    </div>
+
+    <div class="section">
+        <h3>👨‍👩‍👧 DATA ORANG TUA / WALI</h3>
+        <div class="row"><span class="label">Nama Ayah</span><span class="value">: ${data.ayah}</span></div>
+        <div class="row"><span class="label">Pekerjaan Ayah</span><span class="value">: ${data.pekerjaanAyah}</span></div>
+        <div class="row"><span class="label">Nama Ibu</span><span class="value">: ${data.ibu}</span></div>
+        <div class="row"><span class="label">Pekerjaan Ibu</span><span class="value">: ${data.pekerjaanIbu}</span></div>
+        <div class="row"><span class="label">No. HP / WhatsApp</span><span class="value">: ${data.hp}</span></div>
+        <div class="row"><span class="label">Penghasilan</span><span class="value">: ${data.penghasilan}</span></div>
+    </div>
+
+    <div class="section">
+        <h3>🎫 BANTUAN SOSIAL</h3>
+        <div class="row"><span class="label">KIP</span><span class="value">: ${data.kip || '-'}</span></div>
+        <div class="row"><span class="label">KIS</span><span class="value">: ${data.kis || '-'}</span></div>
+        <div class="row"><span class="label">PKH</span><span class="value">: ${data.pkh || '-'}</span></div>
+    </div>
+
+    <div class="peringatan">
+        <strong>⚠️ PENTING!</strong>
+        <p>Simpan bukti pendaftaran ini. Tunjukkan saat verifikasi berkas di sekolah pada tanggal <strong>28 Juni 2026</strong>.</p>
+    </div>
+
+    <div class="footer">
+        <p>Dokumen ini dicetak secara otomatis oleh sistem.</p>
+        <p>SD Negeri 2 Negara Batin - Negara Batin II, Kec. Sungkai Utara, Kab. Lampung Utara</p>
+        <p>📧 gustittadani@gmail.com | 📧 sdnegeri2negarabatin@gmail.com</p>
+    </div>
+</div>
+
+<button class="btn-print" onclick="window.print()">🖨️ Cetak / Simpan sebagai PDF</button>
+
+<script>
+    window.onload = function() {
+        setTimeout(function() { window.print(); }, 500);
+    };
+<\/script>
+</body>
+</html>`;
+
+            const blob = new Blob([fullHTML], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `Bukti_Pendaftaran_${nomor}_${data.nama.replace(/\s+/g, '_')}.html`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+
+            showToast('✅ Bukti pendaftaran berhasil didownload!', 'success');
+        }
+
+        // ============ TOAST ============
+        function showToast(message, type = 'info') {
+            const colors = {
+                success: 'from-emerald-500 to-teal-500',
+                error: 'from-red-500 to-pink-500',
+                info: 'from-blue-500 to-purple-500'
+            };
+            const icons = { success: 'fa-check-circle', error: 'fa-circle-exclamation', info: 'fa-circle-info' };
+            const toast = document.createElement('div');
+            toast.className = `toast bg-gradient-to-r ${colors[type]} text-white px-6 py-4 rounded-2xl shadow-2xl flex items-center space-x-3 min-w-[300px]`;
+            toast.innerHTML = `<i class="fa-solid ${icons[type]} text-2xl"></i><span class="font-bold text-sm">${message}</span>`;
+            document.getElementById('toastContainer').appendChild(toast);
+            setTimeout(() => toast.remove(), 4000);
+        }
+
+        // ============ MODAL SUKSES DENGAN DOWNLOAD ============
+        function showSuccessModalWithDownload(data, nomor) {
+            const modal = document.getElementById('modal');
+            document.getElementById('modalContent').innerHTML = `
+                <div class="bg-gradient-to-br from-emerald-500 to-teal-600 p-8 text-white text-center rounded-t-3xl">
+                    <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa-solid fa-check text-emerald-500 text-4xl"></i>
+                    </div>
+                    <h2 class="text-3xl font-black font-fredoka">Pendaftaran Berhasil! 🎉</h2>
+                    <p class="opacity-90 mt-2">Data Anda telah tersimpan di sistem</p>
+                </div>
+                <div class="p-8">
+                    <div class="bg-gradient-to-r from-purple-50 to-pink-50 border-2 border-purple-200 rounded-2xl p-6 mb-6 text-center">
+                        <p class="text-xs font-bold text-purple-600 uppercase mb-2">Nomor Pendaftaran Anda</p>
+                        <p class="text-3xl font-black text-purple-700 font-fredoka">${nomor}</p>
+                        <p class="text-xs text-gray-500 mt-2">⚠️ Simpan nomor ini untuk keperluan verifikasi</p>
+                    </div>
+
+                    <div class="bg-gradient-to-r from-blue-50 to-cyan-50 border-2 border-blue-200 rounded-2xl p-4 mb-4">
+                        <div class="flex items-start">
+                            <i class="fa-solid fa-envelope-circle-check text-blue-600 text-xl mt-1 mr-3"></i>
+                            <div class="text-sm text-gray-700">
+                                <p class="font-bold mb-1">📧 Data otomatis terkirim ke admin</p>
+                                <p class="text-xs">Data pendaftaran telah dikirim ke <strong>${EMAILJS_CONFIG.EMAIL_TUJUAN}</strong> melalui sistem EmailJS.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2 text-sm mb-6">
+                        <div class="flex justify-between p-2 border-b"><span class="text-gray-500">Nama</span><strong>${data.nama}</strong></div>
+                        <div class="flex justify-between p-2 border-b"><span class="text-gray-500">NIK</span><strong class="font-mono">${data.nik}</strong></div>
+                        <div class="flex justify-between p-2 border-b"><span class="text-gray-500">TTL</span><strong>${data.tempatLahir}, ${data.tanggalLahir}</strong></div>
+                        <div class="flex justify-between p-2 border-b"><span class="text-gray-500">No HP Ortu</span><strong>${data.hp}</strong></div>
+                    </div>
+
+                    <button onclick='downloadBukti(${JSON.stringify(data).replace(/'/g, "\\'")}, "${nomor}")' class="w-full bg-gradient-to-r from-blue-500 to-cyan-500 text-white py-3 rounded-xl font-black shadow-lg hover:scale-105 transition-transform mb-3">
+                        <i class="fa-solid fa-download mr-2"></i> Download Bukti Pendaftaran
+                    </button>
+
+                    <button onclick="closeModal(); switchView('hero-view')" class="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white py-3 rounded-xl font-black shadow-lg hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-house mr-2"></i> Kembali ke Beranda
+                    </button>
+                </div>
+            `;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        // ============ MODAL DETAIL ============
+        function showDetailModal(index) {
+            const data = JSON.parse(localStorage.getItem("pendaftarData") || "[]");
+            const s = data[index];
+            const nomor = generateNomorPendaftaran(index + 1);
+            const modal = document.getElementById('modal');
+            document.getElementById('modalContent').innerHTML = `
+                <div class="bg-gradient-to-br from-purple-500 to-pink-500 p-6 text-white rounded-t-3xl flex items-center justify-between">
+                    <div>
+                        <h2 class="text-2xl font-black font-fredoka">Detail Pendaftar</h2>
+                        <p class="text-sm opacity-90">${nomor}</p>
+                    </div>
+                    <button onclick="closeModal()" class="w-10 h-10 bg-white/20 rounded-full hover:bg-white/30 transition-all">
+                        <i class="fa-solid fa-xmark text-xl"></i>
+                    </button>
+                </div>
+                <div class="p-6 space-y-4">
+                    <div class="bg-gradient-to-r from-blue-50 to-purple-50 p-4 rounded-2xl">
+                        <h3 class="font-black text-purple-700 mb-3 flex items-center"><i class="fa-solid fa-user-graduate mr-2"></i> Data Siswa</h3>
+                        <div class="grid grid-cols-2 gap-2 text-sm">
+                            <div><span class="text-gray-500">Nama:</span><br><strong>${s.nama}</strong></div>
+                            <div><span class="text-gray-500">NIK:</span><br><strong class="font-mono">${s.nik}</strong></div>
+                            <div><span class="text-gray-500">Jenis Kelamin:</span><br><strong>${s.jk}</strong></div>
+                            <div><span class="text-gray-500">Agama:</span><br><strong>${s.agama}</strong></div>
+                            <div class="col-span-2"><span class="text-gray-500">TTL:</span><br><strong>${s.tempatLahir}, ${s.tanggalLahir}</strong></div>
+                            <div class="col-span-2"><span class="text-gray-500">Alamat:</span><br><strong>${s.alamat}</strong></div>
+                        </div>
+                    </div>
+                    <div class="bg-gradient-to-r from-pink-50 to-orange-50 p-4 rounded-2xl">
+                        <h3 class="font-black text-pink-700 mb-3 flex items-center"><i class="fa-solid fa-users mr-2"></i> Data Orang Tua</h3>
+                        <div class="grid grid-cols-2 gap-2 text-sm">
+                            <div><span class="text-gray-500">Ayah:</span><br><strong>${s.ayah}</strong></div>
+                            <div><span class="text-gray-500">Pekerjaan:</span><br><strong>${s.pekerjaanAyah}</strong></div>
+                            <div><span class="text-gray-500">Ibu:</span><br><strong>${s.ibu}</strong></div>
+                            <div><span class="text-gray-500">Pekerjaan:</span><br><strong>${s.pekerjaanIbu}</strong></div>
+                            <div><span class="text-gray-500">No HP:</span><br><strong class="text-blue-600">${s.hp}</strong></div>
+                            <div><span class="text-gray-500">Penghasilan:</span><br><strong>${s.penghasilan}</strong></div>
+                        </div>
+                    </div>
+                    <div class="bg-gradient-to-r from-emerald-50 to-teal-50 p-4 rounded-2xl">
+                        <h3 class="font-black text-emerald-700 mb-3 flex items-center"><i class="fa-solid fa-hand-holding-heart mr-2"></i> Bantuan Sosial</h3>
+                        <div class="flex flex-wrap gap-2">
+                            ${s.kip ? `<span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs font-bold border border-amber-300">🎓 KIP: ${s.kip}</span>` : ''}
+                            ${s.kis ? `<span class="bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full text-xs font-bold border border-emerald-300">💚 KIS: ${s.kis}</span>` : ''}
+                            ${s.pkh ? `<span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs font-bold border border-purple-300">💜 PKH: ${s.pkh}</span>` : ''}
+                            ${!s.kip && !s.kis && !s.pkh ? '<span class="text-gray-400 text-sm italic">Tidak ada bantuan sosial</span>' : ''}
+                        </div>
+                    </div>
+                    <div class="text-xs text-gray-500 text-center pt-2">
+                        <i class="fa-solid fa-clock mr-1"></i> Terdaftar: ${new Date(s.tanggalDaftar).toLocaleString('id-ID')}
+                    </div>
+                </div>
+            `;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // ============ ADMIN ============
+        function handleAdminNav() {
+            if (statusLoginAdmin) switchView('admin-view');
+            else switchView('login-view');
+        }
+
+        function prosesLoginAdmin(event) {
+            event.preventDefault();
+            const user = document.getElementById('loginUser').value;
+            const pass = document.getElementById('loginPass').value;
+            if (user === "admin" && pass === "Gustitta1208") {
+                statusLoginAdmin = true;
+                document.getElementById('btn-logout').classList.remove('hidden');
+                showToast('Login berhasil! Selamat datang admin.', 'success');
+                switchView('admin-view');
+            } else {
+                showToast('Username atau password salah!', 'error');
+            }
+        }
+
+        function logoutAdmin() {
+            statusLoginAdmin = false;
+            document.getElementById('btn-logout').classList.add('hidden');
+            showToast('Anda telah keluar dari sistem.', 'info');
+            switchView('hero-view');
+        }
+
+        function renderAdminDashboard() {
+            const search = (document.getElementById('searchInput')?.value || '').toLowerCase();
+            const data = JSON.parse(localStorage.getItem("pendaftarData") || "[]");
+            const filtered = data.filter(d => 
+                d.nama.toLowerCase().includes(search) || d.nik.includes(search)
+            );
+
+            let totalKip = 0, totalKis = 0, totalPkh = 0, totalL = 0, totalP = 0;
+            data.forEach(item => {
+                if (item.kip) totalKip++;
+                if (item.kis) totalKis++;
+                if (item.pkh) totalPkh++;
+                if (item.jk === 'Laki-laki') totalL++;
+                else totalP++;
+            });
+
+            document.getElementById('statTotal').textContent = data.length;
+            document.getElementById('statKip').textContent = totalKip;
+            document.getElementById('statKis').textContent = totalKis;
+            document.getElementById('statPkh').textContent = totalPkh;
+
+            const total = totalL + totalP || 1;
+            const pctL = Math.round(totalL / total * 100);
+            const pctP = Math.round(totalP / total * 100);
+            document.getElementById('genderChart').innerHTML = `
+                <div class="text-center">
+                    <div class="relative w-24 h-24 mx-auto mb-2">
+                        <svg class="w-24 h-24 -rotate-90">
+                            <circle cx="48" cy="48" r="40" stroke="#e5e7eb" stroke-width="12" fill="none"/>
+                            <circle cx="48" cy="48" r="40" stroke="#3b82f6" stroke-width="12" fill="none" 
+                                stroke-dasharray="${pctL * 2.51} 251" stroke-linecap="round"/>
+                        </svg>
+                        <div class="absolute inset-0 flex items-center justify-center font-black text-blue-600">${pctL}%</div>
+                    </div>
+                    <div class="text-sm font-bold">👦 Laki-laki</div>
+                    <div class="text-xs text-gray-500">${totalL} siswa</div>
+                </div>
+                <div class="text-center">
+                    <div class="relative w-24 h-24 mx-auto mb-2">
+                        <svg class="w-24 h-24 -rotate-90">
+                            <circle cx="48" cy="48" r="40" stroke="#e5e7eb" stroke-width="12" fill="none"/>
+                            <circle cx="48" cy="48" r="40" stroke="#ec4899" stroke-width="12" fill="none" 
+                                stroke-dasharray="${pctP * 2.51} 251" stroke-linecap="round"/>
+                        </svg>
+                        <div class="absolute inset-0 flex items-center justify-center font-black text-pink-600">${pctP}%</div>
+                    </div>
+                    <div class="text-sm font-bold">👧 Perempuan</div>
+                    <div class="text-xs text-gray-500">${totalP} siswa</div>
+                </div>
+            `;
+
+            const maxBansos = Math.max(totalKip, totalKis, totalPkh, 1);
+            document.getElementById('bansosChart').innerHTML = `
+                <div>
+                    <div class="flex justify-between text-sm mb-1"><span class="font-bold">🎓 KIP</span><span class="font-black text-amber-600">${totalKip}</span></div>
+                    <div class="h-3 bg-gray-100 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-amber-400 to-orange-500 rounded-full transition-all" style="width: ${totalKip/maxBansos*100}%"></div></div>
+                </div>
+                <div>
+                    <div class="flex justify-between text-sm mb-1"><span class="font-bold">💚 KIS</span><span class="font-black text-emerald-600">${totalKis}</span></div>
+                    <div class="h-3 bg-gray-100 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-emerald-400 to-teal-500 rounded-full transition-all" style="width: ${totalKis/maxBansos*100}%"></div></div>
+                </div>
+                <div>
+                    <div class="flex justify-between text-sm mb-1"><span class="font-bold">💜 PKH</span><span class="font-black text-purple-600">${totalPkh}</span></div>
+                    <div class="h-3 bg-gray-100 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-purple-400 to-pink-500 rounded-full transition-all" style="width: ${totalPkh/maxBansos*100}%"></div></div>
+                </div>
+            `;
+
+            const tbody = document.getElementById('adminTableBody');
+            if (filtered.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="7" class="p-12 text-center"><div class="text-6xl mb-3">📭</div><p class="text-gray-400 font-bold">Tidak ada data</p></td></tr>`;
+                return;
+            }
+            tbody.innerHTML = filtered.map((s, i) => {
+                const realIndex = data.indexOf(s);
+                const nomor = generateNomorPendaftaran(realIndex + 1);
+                let badges = '';
+                if (s.kip) badges += `<span class="bg-amber-100 text-amber-800 text-[10px] px-2 py-0.5 rounded-full font-bold border border-amber-300">KIP</span>`;
+                if (s.kis) badges += `<span class="bg-emerald-100 text-emerald-800 text-[10px] px-2 py-0.5 rounded-full font-bold border border-emerald-300">KIS</span>`;
+                if (s.pkh) badges += `<span class="bg-purple-100 text-purple-800 text-[10px] px-2 py-0.5 rounded-full font-bold border border-purple-300">PKH</span>`;
+                if (!badges) badges = `<span class="text-gray-400 text-xs italic">Umum</span>`;
+                return `
+                    <tr class="hover:bg-purple-50 transition-colors">
+                        <td class="p-4">
+                            <div class="font-black text-gray-500">${i + 1}</div>
+                            <div class="text-[10px] text-purple-600 font-bold mt-1">${nomor}</div>
+                        </td>
+                        <td class="p-4"><div class="font-black text-gray-800">${s.nama}</div><div class="text-xs text-gray-500">${new Date(s.tanggalDaftar).toLocaleDateString('id-ID')}</div></td>
+                        <td class="p-4 font-mono text-xs text-gray-600">${s.nik}</td>
+                        <td class="p-4 text-center"><span class="inline-block w-8 h-8 rounded-full ${s.jk === 'Laki-laki' ? 'bg-blue-100 text-blue-600' : 'bg-pink-100 text-pink-600'} font-black flex items-center justify-center">${s.jk === 'Laki-laki' ? 'L' : 'P'}</span></td>
+                        <td class="p-4"><div class="text-xs"><strong>${s.ayah}</strong> & <strong>${s.ibu}</strong></div><div class="text-xs text-blue-600 font-bold mt-1"><i class="fa-brands fa-whatsapp"></i> ${s.hp}</div></td>
+                        <td class="p-4 text-center"><div class="flex flex-wrap gap-1 justify-center">${badges}</div></td>
+                        <td class="p-4 text-center">
+                            <button onclick="showDetailModal(${realIndex})" class="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-3 py-1.5 rounded-lg text-xs font-bold hover:scale-105 transition-transform shadow-md">
+                                <i class="fa-solid fa-eye mr-1"></i> Detail
+                            </button>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        function exportData() {
+            const data = JSON.parse(localStorage.getItem("pendaftarData") || "[]");
+            if (data.length === 0) { showToast('Tidak ada data untuk diekspor!', 'error'); return; }
+            
+            let csv = 'No,Nomor Pendaftaran,Nama,NIK,JK,Tempat Lahir,Tanggal Lahir,Agama,Alamat,Ayah,Pekerjaan Ayah,Ibu,Pekerjaan Ibu,HP,Penghasilan,KIP,KIS,PKH,Tanggal Daftar\n';
+            data.forEach((d, i) => {
+                const nomor = generateNomorPendaftaran(i + 1);
+                csv += `${i+1},"${nomor}","${d.nama}","${d.nik}","${d.jk}","${d.tempatLahir}","${d.tanggalLahir}","${d.agama}","${d.alamat}","${d.ayah}","${d.pekerjaanAyah}","${d.ibu}","${d.pekerjaanIbu}","${d.hp}","${d.penghasilan}","${d.kip}","${d.kis}","${d.pkh}","${d.tanggalDaftar}"\n`;
+            });
+            const blob = new Blob([csv], {type: 'text/csv'});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `data_penerimaan_murid_baru_sdn2_${new Date().toISOString().split('T')[0]}.csv`;
+            a.click();
+            showToast('Data berhasil diekspor!', 'success');
+        }
+
+        function clearDatabase() {
+            if (confirm('⚠️ PERINGATAN!\n\nHapus SEMUA data pendaftar?\nTindakan ini tidak dapat dibatalkan!')) {
+                localStorage.setItem("pendaftarData", "[]");
+                renderAdminDashboard();
+                showToast('Semua data berhasil dihapus!', 'success');
+            }
+        }
+
+        setTimeout(animateCounters, 500);
+    </script>
+</body>
+</html><html>
+
+</html><html>
+
+</html>
