@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SD NEGERI 2 NEGARA BATIN - Kec. Sungkai Utara, Kab. Lampung Utara</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f7fa;
+            color: #1f2937;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Background Pattern Formal */
+        .bg-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: 
+                linear-gradient(135deg, #f5f7fa 0%, #e8eef5 100%);
+        }
+
+        .bg-pattern::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 15% 20%, rgba(30, 58, 138, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 85% 80%, rgba(184, 134, 11, 0.05) 0%, transparent 40%);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+            position: relative;
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #1e3a8a 100%);
+            color: #fff;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(45deg, transparent 48%, rgba(255, 255, 255, 0.03) 49%, rgba(255, 255, 255, 0.03) 51%, transparent 52%);
+            background-size: 30px 30px;
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 900px;
+            z-index: 10;
+            animation: fadeInUp 1s ease-out;
+            position: relative;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .school-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 8px 22px;
+            border-radius: 50px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+        }
+
+        .school-badge i {
+            margin-right: 8px;
+            color: #d4af37;
+        }
+
+        .hero-title {
+            font-size: clamp(2.2rem, 5vw, 4rem);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 15px;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+
+        .hero-title .highlight {
+            color: #d4af37;
+            display: block;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.4rem);
+            margin-bottom: 25px;
+            opacity: 0.95;
+            font-weight: 400;
+            color: #e8eef5;
+        }
+
+        .hero-description {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 35px;
+            opacity: 0.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+
+        .btn {
+            padding: 14px 32px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            letter-spacing: 0.3px;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: #d4af37;
+            color: #1e3a8a;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: #b8941f;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #fff;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #fff;
+            transform: translateY(-2px);
+        }
+
+        /* Stats Section */
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            padding: 25px 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.12);
+            border-color: #d4af37;
+        }
+
+        .stat-icon {
+            font-size: 2.2rem;
+            margin-bottom: 12px;
+            color: #d4af37;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            color: #d4af37;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.95;
+            line-height: 1.4;
+            color: #e8eef5;
+        }
+
+        /* Content Sections */
+        .section {
+            padding: 70px 20px;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: rgba(30, 58, 138, 0.1);
+            color: #1e3a8a;
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            border: 1px solid rgba(30, 58, 138, 0.2);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-title {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 800;
+            margin-bottom: 12px;
+            color: #1e3a8a;
+        }
+
+        .section-subtitle {
+            font-size: 1.05rem;
+            color: #4b5563;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .info-card {
+            background: #fff;
+            padding: 30px 25px;
+            border-radius: 10px;
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .info-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #1e3a8a, #d4af37);
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(30, 58, 138, 0.12);
+            border-color: #1e3a8a;
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #1e3a8a, #1e40af);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #d4af37;
+            box-shadow: 0 4px 12px rgba(30, 58, 138, 0.2);
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #1e3a8a;
+        }
+
+        .card-text {
+            line-height: 1.7;
+            color: #4b5563;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .card-list {
+            list-style: none;
+        }
+
+        .card-list li {
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid #f3f4f6;
+            font-size: 0.93rem;
+            color: #374151;
+        }
+
+        .card-list li:last-child {
+            border-bottom: none;
+        }
+
+        .card-list li i {
+            color: #d4af37;
+            font-size: 1rem;
+        }
+
+        /* Visi Misi Cards */
+        .vm-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+        }
+
+        .vm-card {
+            background: #fff;
+            padding: 30px 25px;
+            border-radius: 10px;
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .vm-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #1e3a8a, #d4af37);
+        }
+
+        .vm-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(30, 58, 138, 0.12);
+        }
+
+        .vm-icon {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            color: #1e3a8a;
+        }
+
+        .vm-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: #1e3a8a;
+        }
+
+        .vm-text {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: #4b5563;
+        }
+
+        /* Fasilitas Grid */
+        .fasilitas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+        }
+
+        .fasilitas-item {
+            background: #fff;
+            padding: 25px 20px;
+            border-radius: 10px;
+            border: 1px solid #e5e7eb;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .fasilitas-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(30, 58, 138, 0.1);
+            border-color: #1e3a8a;
+        }
+
+        .fasilitas-item:hover .fasilitas-icon {
+            background: #1e3a8a;
+            color: #d4af37;
+        }
+
+        .fasilitas-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(30, 58, 138, 0.1);
+            color: #1e3a8a;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin: 0 auto 15px;
+            transition: all 0.3s ease;
+        }
+
+        .fasilitas-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: #1e3a8a;
+        }
+
+        .fasilitas-desc {
+            font-size: 0.85rem;
+            color: #6b7280;
+            line-height: 1.5;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 18px;
+        }
+
+        .contact-card {
+            background: #fff;
+            padding: 28px 22px;
+            border-radius: 10px;
+            border: 1px solid #e5e7eb;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(30, 58, 138, 0.1);
+            border-color: #1e3a8a;
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #1e3a8a, #1e40af);
+            color: #d4af37;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            margin: 0 auto 15px;
+            box-shadow: 0 4px 12px rgba(30, 58, 138, 0.2);
+        }
+
+        .contact-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #1e3a8a;
+        }
+
+        .contact-text {
+            font-size: 0.93rem;
+            line-height: 1.6;
+            color: #4b5563;
+        }
+
+        .contact-text a {
+            color: #1e3a8a;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .contact-text a:hover {
+            color: #d4af37;
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1e3a8a;
+            color: #fff;
+            padding: 25px 20px;
+            text-align: center;
+            border-top: 3px solid #d4af37;
+        }
+
+        .footer-text {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+            }
+
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+
+            .cards-grid,
+            .vm-grid,
+            .fasilitas-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 50px 15px;
+            }
+        }
+
+        /* Scroll Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Pattern -->
+    <div class="bg-pattern"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="school-badge">
+                <i class="fas fa-award"></i>
+                <span>Sekolah Dasar Negeri</span>
+            </div>
+            
+            <h1 class="hero-title">
+                SD NEGERI 2
+                <span class="highlight">NEGARA BATIN</span>
+            </h1>
+            
+            <p class="hero-subtitle">
+                Kec. Sungkai Utara, Kab. Lampung Utara
+            </p>
+            
+            <p class="hero-description">
+                Membentuk generasi penerus bangsa yang berakhlak mulia, cerdas, kreatif, dan berprestasi. 
+                Kami berkomitmen memberikan pendidikan terbaik untuk masa depan putra-putri Anda.
+            </p>
+
+            <div class="cta-buttons">
+                <a href="daftar.html" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-user-plus"></i>
+                    Daftar Siswa Baru
+                </a>
+                <a href="#tentang" class="btn btn-secondary">
+                    <i class="fas fa-info-circle"></i>
+                    Pelajari Lebih Lanjut
+                </a>
+            </div>
+
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <div class="stat-number">12</div>
+                    <div class="stat-label">Tenaga Pendidik &<br>Kependidikan Profesional</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="stat-number">25+</div>
+                    <div class="stat-label">Prestasi</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tentang Section -->
+    <section class="section" id="tentang">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-badge">Tentang Kami</span>
+                <h2 class="section-title">Membangun Masa Depan Gemilang</h2>
+                <p class="section-subtitle">
+                    SD Negeri 2 Negara Batin berkomitmen memberikan pendidikan berkualitas dengan pendekatan holistik
+                </p>
+            </div>
+
+            <div class="cards-grid">
+                <div class="info-card fade-in">
+                    <div class="card-icon">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <h3 class="card-title">Profil Sekolah</h3>
+                    <p class="card-text">
+                        SD Negeri 2 Negara Batin adalah sekolah dasar negeri yang berlokasi di Kecamatan Sungkai Utara, 
+                        Kabupaten Lampung Utara. Kami menyediakan pendidikan dasar yang berkualitas untuk membentuk 
+                        karakter dan kecerdasan siswa.
+                    </p>
+                    <ul class="card-list">
+                        <li><i class="fas fa-check-circle"></i> Akreditasi C</li>
+                        <li><i class="fas fa-check-circle"></i> Kurikulum Merdeka</li>
+                        <li><i class="fas fa-check-circle"></i> Lingkungan Kondusif</li>
+                    </ul>
+                </div>
+
+                <div class="info-card fade-in">
+                    <div class="card-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3 class="card-title">Alamat Sekolah</h3>
+                    <p class="card-text">
+                        Jl. Raya PTP Bungamayang Negarabatin II,<br>
+                        Kecamatan Sungkai Utara,<br>
+                        Kabupaten Lampung Utara,<br>
+                        Provinsi Lampung
+                    </p>
+                    <ul class="card-list">
+                        <li><i class="fas fa-clock"></i> Senin - Jumat: 07.00 - 14.00</li>
+                        <li><i class="fas fa-clock"></i> Sabtu: 07.00 - 12.00</li>
+                    </ul>
+                </div>
+
+                <div class="info-card fade-in">
+                    <div class="card-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3 class="card-title">Keunggulan Kami</h3>
+                    <p class="card-text">
+                        Kami menawarkan pendidikan yang komprehensif dengan fokus pada pengembangan karakter, 
+                        akademik, dan keterampilan siswa.
+                    </p>
+                    <ul class="card-list">
+                        <li><i class="fas fa-medal"></i> Guru Berkualitas & Berpengalaman</li>
+                        <li><i class="fas fa-medal"></i> Fasilitas Lengkap</li>
+                        <li><i class="fas fa-medal"></i> Program Ekstrakurikuler Beragam</li>
+                        <li><i class="fas fa-medal"></i> Lingkungan Belajar Nyaman</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visi Misi Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-badge">Visi & Misi</span>
+                <h2 class="section-title">Arah & Tujuan Kami</h2>
+                <p class="section-subtitle">
+                    Panduan kami dalam membentuk generasi unggul dan berkarakter
+                </p>
+            </div>
+
+            <div class="vm-grid">
+                <div class="vm-card fade-in">
+                    <div class="vm-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3 class="vm-title">Visi</h3>
+                    <p class="vm-text">
+                        Terwujudnya peserta didik yang berakhlak mulia, cerdas, kreatif, dan berprestasi 
+                        untuk menghadapi tantangan masa depan dengan penuh percaya diri.
+                    </p>
+                </div>
+
+                <div class="vm-card fade-in">
+                    <div class="vm-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3 class="vm-title">Misi</h3>
+                    <ul class="card-list">
+                        <li><i class="fas fa-arrow-right"></i> Menanamkan nilai-nilai keimanan dan ketaqwaan</li>
+                        <li><i class="fas fa-arrow-right"></i> Melaksanakan pembelajaran aktif dan menyenangkan</li>
+                        <li><i class="fas fa-arrow-right"></i> Mengembangkan potensi siswa secara optimal</li>
+                        <li><i class="fas fa-arrow-right"></i> Menciptakan lingkungan sekolah yang bersih dan sehat</li>
+                        <li><i class="fas fa-arrow-right"></i> Meningkatkan kompetensi guru secara berkelanjutan</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fasilitas Section -->
+    <section class="section" id="fasilitas">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-badge">Fasilitas</span>
+                <h2 class="section-title">Sarana & Prasarana</h2>
+                <p class="section-subtitle">
+                    Fasilitas yang mendukung proses pembelajaran yang optimal
+                </p>
+            </div>
+
+            <div class="fasilitas-grid">
+                <div class="fasilitas-item fade-in">
+                    <div class="fasilitas-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h4 class="fasilitas-title">Ruang Kelas yang Nyaman</h4>
+                    <p class="fasilitas-desc">Ruang belajar kondusif</p>
+                </div>
+
+                <div class="fasilitas-item fade-in">
+                    <div class="fasilitas-icon">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h4 class="fasilitas-title">TKA & ANBK</h4>
+                    <p class="fasilitas-desc">Asesmen kompetensi berbasis komputer</p>
+                </div>
+
+                <div class="fasilitas-item fade-in">
+                    <div class="fasilitas-icon">
+                        <i class="fas fa-futbol"></i>
+                    </div>
+                    <h4 class="fasilitas-title">Lapangan Olahraga</h4>
+                    <p class="fasilitas-desc">Lapangan multifungsi</p>
+                </div>
+
+                <div class="fasilitas-item fade-in">
+                    <div class="fasilitas-icon">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <h4 class="fasilitas-title">Taman Sekolah</h4>
+                    <p class="fasilitas-desc">Lingkungan asri & hijau</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontak Section -->
+    <section class="section" id="kontak">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-badge">Kontak</span>
+                <h2 class="section-title">Hubungi Kami</h2>
+                <p class="section-subtitle">
+                    Kami siap menjawab pertanyaan Anda
+                </p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-card fade-in">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3 class="contact-title">Email</h3>
+                    <p class="contact-text">
+                        <a href="mailto:sdnegeri2negarabatin@gmail.com">sdnegeri2negarabatin@gmail.com</a>
+                    </p>
+                </div>
+
+                <div class="contact-card fade-in">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="contact-title">Jam Operasional</h3>
+                    <p class="contact-text">
+                        Senin - Jumat: 07.00 - 14.00<br>
+                        Sabtu: 07.00 - 12.00
+                    </p>
+                </div>
+
+                <div class="contact-card fade-in">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3 class="contact-title">Lokasi</h3>
+                    <p class="contact-text">
+                        Kec. Sungkai Utara<br>
+                        Kab. Lampung Utara<br>
+                        Provinsi Lampung
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="footer-text">
+            &copy; 2026 SD NEGERI 2 NEGARA BATIN. All rights reserved.
+        </p>
+    </footer>
+
+    <script>
+        // Scroll Animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animated Counter
+        const animateCounter = (element) => {
+            const text = element.innerText;
+            const hasPlus = text.includes('+');
+            const target = parseInt(text);
+            if (isNaN(target)) return;
+            
+            const duration = 1500;
+            const step = target / (duration / 16);
+            let current = 0;
+
+            const timer = setInterval(() => {
+                current += step;
+                if (current >= target) {
+                    element.innerText = target + (hasPlus ? '+' : '');
+                    clearInterval(timer);
+                } else {
+                    element.innerText = Math.floor(current) + (hasPlus ? '+' : '');
+                }
+            }, 16);
+        };
+
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counters = entry.target.querySelectorAll('.stat-number');
+                    counters.forEach(counter => animateCounter(counter));
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const statsContainer = document.querySelector('.stats-container');
+        if (statsContainer) {
+            counterObserver.observe(statsContainer);
+        }
+    </script>
+</body>
+</html>
